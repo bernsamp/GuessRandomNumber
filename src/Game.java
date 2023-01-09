@@ -6,6 +6,7 @@ public class Game {
     private final int MINRANGE = 1;
     private final int MAXRANGE = 100;
     private boolean isCorrect = false;
+    private int counter;
 
     public Game(){}
 
@@ -21,6 +22,7 @@ public class Game {
         while (!isCorrect){
 
             guess = scanner.nextInt();
+            counter++;
 
             if (guess > correctAnswer) {
                 System.out.println("Your guess is too high, try again");
@@ -30,9 +32,10 @@ public class Game {
 
             } else {
                 System.out.println(
-                        "Congratulations, you guessed the number!");
+                        "Congratulations, you guessed the number! It took you " + counter + " guesses.");
                 isCorrect = true;
             }
         }
+        System.exit(0);
     }
 }
